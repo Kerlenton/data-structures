@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdint.h>
 #define LIMIT 255
 
@@ -21,7 +22,7 @@ void push(stack_t* stack, uint8_t* data)
 	if (stack->count != LIMIT)
 		stack->arr[stack->count++] = data;
 	else
-		printf("Stack is full");
+		fprintf(stderr, "ERROR: Stack is full");
 }
 
 uint8_t* pop(stack_t* stack)
@@ -29,5 +30,8 @@ uint8_t* pop(stack_t* stack)
 	if (stack->count != 0)
 		return stack->arr[--stack->count];
 	else
-		printf("Stack is void");
+	{
+		fprintf(stderr, "ERROR: Stack is void!");
+		return 0;
+	}
 }

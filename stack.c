@@ -1,20 +1,33 @@
 #include <stdint.h>
 #define LIMIT 255
 
-unsigned char count = 0;
-
-void push(uint8_t** stack, uint8_t* data)
+typedef struct 
 {
-	if (count != LIMIT)
-		stack[count++] = num;
+	uint8_t** arr;
+	unsigned char count;
+}stack_t;
+
+stack_t* newStack()
+{
+	stack_t* stack = (stack_t*)malloc(sizeof(stack_t));
+	stack->arr = (uint8_t**)malloc(LIMIT);
+	stack->count = 0;
+
+	return stack;
+}
+
+void push(stack_t* stack, uint8_t* data)
+{
+	if (stack->count != LIMIT)
+		stack->arr[stack->count++] = data;
 	else
 		printf("Stack is full");
 }
 
-uint8_t* pop(uint8_t** stack)
+uint8_t* pop(stack_t* stack)
 {
-	if (count != 0)
-		return stack[--count];
+	if (stack->count != 0)
+		return stack->arr[--stack->count];
 	else
 		printf("Stack is void");
 }

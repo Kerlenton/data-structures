@@ -1,9 +1,9 @@
+#include <stdint.h>
 #define LIMIT 255
 
-double stack[LIMIT];
 unsigned char count = 0;
 
-void push(int num)
+void push(uint8_t** stack, uint8_t* num)
 {
 	if (count != LIMIT)
 		stack[count++] = num;
@@ -11,7 +11,7 @@ void push(int num)
 		printf("Stack is full");
 }
 
-int pop(void)
+uint8_t* pop(uint8_t** stack)
 {
 	if (count != 0)
 		return stack[--count];

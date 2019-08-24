@@ -3,7 +3,7 @@
 
 unsigned char count = 0;
 
-void push(uint8_t** stack, uint8_t* num)
+void push(uint8_t** stack, uint8_t* data)
 {
 	if (count != LIMIT)
 		stack[count++] = num;

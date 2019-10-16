@@ -2,9 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdint.h>
 #include <math.h>
 
 #define HT_PRIME_1 151

@@ -422,6 +422,9 @@ static void _set_tree(tree_node *node, vtype_tree_t tkey, vtype_tree_t tvalue, v
 				_set_tree(node->left, tkey, tvalue, key, value);
 		}
 
+		else
+			_set_value(node, tvalue, value);
+
 		break;
 	}
 }

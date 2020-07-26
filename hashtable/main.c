@@ -39,7 +39,6 @@ int main(void)
 	print_hashtab(hashtab);
 	free_hashtab(hashtab);
 
-	system("PAUSE");
 	return 0;
 }
 

@@ -44,7 +44,6 @@ int main(void)
 	delbyid_list(list, 1);
 	print_list(list);
 
-	system("PAUSE");
 	return 0;
 }
 
